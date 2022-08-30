@@ -4,7 +4,7 @@
 
 >**本库已经改名为 [LoadingStateView](https://github.com/DylanCaiCoding/LoadingStateView)**。
 
-这是一个深度解耦加载界面和标题栏的工具，只用了一个 Kotlin 文件实现，不算上注释少于 300 行代码。不仅能在请求网络数据时**显示加载中、加载成功、加载失败、无数据的视图或自定义视图**，还可以**对标题栏进行管理**。
+这是一个深度解耦加载界面和标题栏的工具，核心功能只用了一个 Kotlin 文件实现，200 多行代码。不仅能在请求网络数据时**显示加载中、加载成功、加载失败、无数据的视图或自定义视图**，还可以**对标题栏进行管理**。
 
 ## 为什么改名
 
@@ -15,24 +15,4 @@
 - 另一个管理标题栏虽然很重要，但其实算是一个添加装饰视图的辅助功能。
 
 所以决定进行改名，提高代码的阅读性。
-
-## 迁移指南
-
-如果你不是强迫症，可以不用迁移，因为功能并未改变。
-
-巧用全局替换可节省迁移的时间。通过组合键 control + shift + R 会弹出全局替换弹框，注意需要亮起输入框右侧的 `Cc` 图标来匹配大小写，否则改类名时会把变量名一起改了。
-
-替换规则：
-
-| 原命名                              | 新命名                               |
-| ----------------------------------- | ------------------------------------ |
-| com.dylanc.loadinghelper            | com.dylanc.loadingstateview          |
-| LoadingHelper.Adapter               | LoadingStateView.ViewDelegate        |
-| LoadingHelper.DecorAdapter          | LoadingStateView.DecorViewDelegate   |
-| LoadingHelper.setDefaultAdapterPool | LoadingStateView.setViewDelegatePool |
-| LoadingHelper                       | LoadingStateView                     |
-| setDecorAdapter                     | setDecorView                         |
-| addChildDecorAdapter                | addChildDecorView                    |
-
-经过上述的替换后，代码应该能正常运行。然后再修改涉及到的变量名或类名即可。
 
